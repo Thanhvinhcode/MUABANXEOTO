@@ -126,6 +126,13 @@ function loadCars() {
                 imgs: ["https://i.postimg.cc/XvF9QBYr/ff.jpg"],
                 note: "Cam kết không tai nạn , không ngập nước , máy móc keo chỉ zin đét , xe bán 295trieu , ngân hàng hỗ trợ 50% giá trị xe , bảo hành máy 6 tháng "
             },
+            {
+                name: "Kia K3 2015 AT",
+                price: "325.000.000 VND",
+                mainImg: "https://i.postimg.cc/dVqr9rsz/image.png",
+                imgs: ["https://i.postimg.cc/dVqr9rsz/image.png"],
+                note: "Kia K3 2015 AT máy 1.6,full cửa sổ nóc,Odo 11,5 van ,xe đẹp máy zin. Trang bị đầy đủ màn hình cam lùi cam hành trình ,khởi động đề nổ startop ...Giá 325 tr bao rút hồ sơ gốc . Bán thiếu 40 tr ko lãi  . Bảo hành máy 6 tháng"
+            },
         ];
         saveCars();
 
