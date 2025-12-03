@@ -134,12 +134,61 @@ function loadCars() {
                 note: "Kia K3 2015 AT máy 1.6,full cửa sổ nóc,Odo 11,5 van ,xe đẹp máy zin. Trang bị đầy đủ màn hình cam lùi cam hành trình ,khởi động đề nổ startop ...Giá 325 tr bao rút hồ sơ gốc . Bán thiếu 40 tr ko lãi  . Bảo hành máy 6 tháng"
             },
              {
-                name: "Toyota Vios 2016 ",
+                name: "Toyota Vios 2016 Tự Động",
                 price: "295.000.000 VND",
                 mainImg: "https://i.postimg.cc/3J0sYT12/image.png",
                 imgs: ["https://i.postimg.cc/3J0sYT12/image.png"],
-                note: "Vios 2016 số tự động bản G màu trắng Ngọc Trinh, động cơ 1,5, máy số zin, ko lỗi, nội ngoại thất đẹp sẽ vào màn hình cam de, cam lùi Giá 295 bao rút hồ sơ gốc, ngân hàng hỗ trợ 50%, bán thiếu 30 tr , bảo hành máy 6 tháng" }
-        ];
+                note: "Vios 2016 số tự động bản G màu trắng Ngọc Trinh, động cơ 1,5, máy số zin, ko lỗi, nội ngoại thất đẹp sẽ vào màn hình cam de, cam lùi Giá 295 bao rút hồ sơ gốc, ngân hàng hỗ trợ 50%, bán thiếu 30 tr , bảo hành máy 6 tháng" },
+          {
+                name: "Suzuki Ciaz 2019",
+                price: "295.000.000 VND",
+                mainImg: "https://i.postimg.cc/0y3yt6DR/image.png",
+                imgs: ["https://i.postimg.cc/0y3yt6DR/image.png"],
+                note: "Đang đợi cập nhập mô tả "
+            },
+              {
+                name: "Toyota Innova 2.0 ",
+                price: "385.000.000 VND",
+                mainImg: "https://i.postimg.cc/85fKhYDr/image.png",
+                imgs: ["https://i.postimg.cc/85fKhYDr/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+              {
+                name: "Ford",
+                price: "285.000.000 VND",
+                mainImg: "https://i.postimg.cc/qBXc9rmJ/image.png",
+                imgs: ["https://i.postimg.cc/qBXc9rmJ/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+              {
+                name: "Xe Cổ",
+                price: "40.000.000 VND",
+                mainImg: "https://i.postimg.cc/TY5dKdBJ/image.png",
+                imgs: ["https://i.postimg.cc/TY5dKdBJ/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+              {
+                name: "Xe cổ ",
+                price: "30.000.000 VND",
+                mainImg: "https://i.postimg.cc/jdRVbstM/image.png",
+                imgs: ["https://i.postimg.cc/jdRVbstM/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+              {
+                name: "Toyota nâu",
+                price: "315.000.000 VND",
+                mainImg: "https://i.postimg.cc/1RJB8PDc/image.png",
+                imgs: ["https://i.postimg.cc/1RJB8PDc/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+              {
+                name: "Huyndai i10 2018 Tự Động",
+                price: "290.000.000 VND",
+                mainImg: "https://i.postimg.cc/qqSC2mJV/image.png",
+                imgs: ["https://i.postimg.cc/qqSC2mJV/image.png"],
+                note: "Đang đợi cập nhập mô tả"
+            },
+            ];
         saveCars();
 
 }
