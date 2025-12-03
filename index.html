@@ -13,7 +13,20 @@
 
 <header>Thành Vinh – Mua Bán Xe ÔTÔ Miền Nam - 039.767.0298</header>
 <h2 style="text-align: center;">Xem thông tin xe chi tiết - Liên hệ qua zalo nhé !!!! Cửa hàng Ở Thuận An - Bình Dương</h2>
+<div class="filter-box">
+    <label>Sắp xếp giá:</label>
+    <select id="sortPrice" onchange="sortCars()">
+        <option value="none">Không sắp xếp</option>
+        <option value="asc">Giá thấp → cao</option>
+        <option value="desc">Giá cao → thấp</option>
+    </select>
+</div>
+
+<!-- DANH SÁCH XE -->
 <div id="carList" class="car-list"></div>
+
+<!-- PHÂN TRANG -->
+<div id="pagination" class="pagination"></div>
 
 <!-- POPUP -->
 <div id="carDetail" class="modal" onclick="clickOutsidePopup(event)">
@@ -28,34 +41,11 @@
         </div>
 
         <p id="detailPrice" class="price"></p>
-        <p id="detailDesc" class="hide-desc"></p>
+<p id="detailDesc"></p>
 
         <div id="detailNote" class="note-box">Không có ghi chú.</div>
 
-        <!-- ADMIN PANEL -->
-        <div id="adjustPanel" class="admin-panel">
-            <label>Font Size (px):</label>
-            <input type="number" id="fontSizeInput" value="22">
-
-            <label>Màu (HEX):</label>
-            <input type="color" id="fontColorInput" value="#0d47a1">
-
-            <button onclick="updatePriceStyle()">Cập nhật</button>
-
-            <br><br>
-
-            <label>Upload Ảnh Chính: </label>
-            <input type="file" id="uploadMainImg" accept="image/*">
-
-            <br><br>
-
-            <label>Upload Ảnh Phụ: </label>
-            <input type="file" id="uploadExtraImg" multiple accept="image/*">
-
-            <br><br>
-
-            <button onclick="removeCurrentImage()">Xóa ảnh hiện tại</button>
-        </div>
+        <!-- ĐÃ XOÁ TOÀN BỘ ADMIN PANEL -->
     </div>
 </div>
 

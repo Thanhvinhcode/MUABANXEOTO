@@ -2,65 +2,44 @@ let cars = [];
 let currentCarIndex = 0;
 let currentSlide = 0;
 
-const adminPass = "2004"; // Mật khẩu mở panel chỉnh sửa
-
+/* ============================
+        KHỞI TẠO TRANG
+============================= */
 function initPage() {
-    loadCars();
-    checkAdmin();
+    loadCars();      // chỉ load dữ liệu mặc định, không lưu trình duyệt
     renderCars();
 
     document.getElementById("prevBtn").onclick = prevSlide;
     document.getElementById("nextBtn").onclick = nextSlide;
-
-    document.getElementById("uploadMainImg").onchange = function () {
-        addMainImage(this);
-    };
-
-    document.getElementById("uploadExtraImg").onchange = function () {
-        addExtraImages(this);
-    };
 }
 
 /* ============================
-        LƯU – TẢI XE
-============================ */
-
-function saveCars() {
-    localStorage.setItem("carsData", JSON.stringify(cars));
-}
+        TẢI DANH SÁCH XE
+============================= */
 
 function loadCars() {
-    const data = localStorage.getItem("carsData");
-
-    if (data) {
-        cars = JSON.parse(data);
-        return;
-    }
-
-    // ----------------------------
-    // DỮ LIỆU XE MẶC ĐỊNH
-    // ----------------------------
+    // DỮ LIỆU XE MẶC ĐỊNH — KHÔNG LƯU LOCALSTORAGE NỮA
     cars = [
         {
             name:"Toyota Vios 2018",
             price:"275.000.000 VND",
             mainImg:"https://i.postimg.cc/SRJ7rmxh/IMG-5426.jpg",
             imgs:["https://i.postimg.cc/SRJ7rmxh/IMG-5426.jpg"],
-            note:"Vios 2018 form mới 2019, Số sàn động cơ 1.5 , odo 7.7v ..."
+            note:"Vios 2018 form mới 2019, Số sàn động cơ 1.5 , odo 7.7v "
         },
         {
             name:"Toyota Vios 2019",
             price:"265.000.000 VND",
             mainImg:"https://i.postimg.cc/VLY53zym/z7268117325966-3703ad59d14d4a1cb7f2ddd7da6682c6.jpg",
             imgs:["https://i.postimg.cc/VLY53zym/z7268117325966-3703ad59d14d4a1cb7f2ddd7da6682c6.jpg"],
-            note:"Vios 2019 số sàn bản đầy đủ trang bị 7 túi khí..."
+            note:"Vios 2019 số sàn bản đầy đủ trang bị 7 túi khí"
         },
         {
             name:"Huyndai i10 2016",
             price:"185.000.000 VND",
             mainImg:"https://i.postimg.cc/hPgyWpqF/i10.jpg",
             imgs:["https://i.postimg.cc/hPgyWpqF/i10.jpg"],
-            note:"Huyndai i10 2016mt bản đủ máy 1.2..."
+            note:"Huyndai i10 2016mt bản đủ máy 1.2"
         },
 
     {
@@ -188,40 +167,64 @@ function loadCars() {
                 imgs: ["https://i.postimg.cc/qqSC2mJV/image.png"],
                 note: "Đang đợi cập nhập mô tả"
             },
-            ];
-        saveCars();
-
+    ];
 }
 
+
 /* ============================
-        DANH SÁCH XE
-============================ */
+        PHÂN TRANG
+============================= */
+
+let itemsPerPage = 12;
+let currentPage = 1;
 
 function renderCars() {
     const carList = document.getElementById("carList");
     carList.innerHTML = "";
 
-    cars.forEach((car, index) => {
+    let start = (currentPage - 1) * itemsPerPage;
+    let end = start + itemsPerPage;
+
+    let showCars = cars.slice(start, end);
+
+    showCars.forEach((car, index) => {
         const card = document.createElement("div");
         card.className = "car-card";
         card.innerHTML = `
-            <img src="${car.mainImg || car.imgs[0]}">
+            <img loading="lazy" src="${car.mainImg || car.imgs[0]}">
             <h3>${car.name}</h3>
             <p class="price">${car.price}</p>
-            <button onclick="showDetail(${index})">Xem chi tiết</button>
+            <button onclick="showDetail(${start + index})">Xem chi tiết</button>
         `;
-
         card.addEventListener("click", e => {
-            if (e.target.tagName !== "BUTTON") showDetail(index);
+            if (e.target.tagName !== "BUTTON") showDetail(start + index);
         });
-
         carList.appendChild(card);
     });
+
+    renderPagination();
 }
+
+function renderPagination() {
+    const totalPages = Math.ceil(cars.length / itemsPerPage);
+    let html = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goPage(${i})">${i}</button>`;
+    }
+
+    document.getElementById("pagination").innerHTML = html;
+}
+
+function goPage(p) {
+    currentPage = p;
+    renderCars();
+}
+
 
 /* ============================
         POPUP CHI TIẾT XE
-============================ */
+============================= */
 
 function showDetail(i) {
     currentCarIndex = i;
@@ -232,18 +235,12 @@ function showDetail(i) {
     document.getElementById("detailName").innerText = car.name;
     document.getElementById("detailImg").src = car.imgs[currentSlide];
     document.getElementById("detailPrice").innerText = "Giá: " + car.price;
-    document.getElementById("detailNote").innerText = car.note || "Không có ghi chú.";
+document.getElementById("detailNote").innerText = car.note || "Không có ghi chú.";
 
     document.getElementById("carDetail").style.display = "block";
     document.body.style.overflow = "hidden";
 
     updateSlideButtons();
-
-    document.getElementById("fontSizeInput").value =
-        parseInt(window.getComputedStyle(document.getElementById("detailPrice")).fontSize);
-
-    document.getElementById("fontColorInput").value =
-        rgbToHex(window.getComputedStyle(document.getElementById("detailPrice")).color);
 }
 
 function closeDetail() {
@@ -259,7 +256,7 @@ function clickOutsidePopup(e) {
 
 /* ============================
         SLIDE ẢNH
-============================ */
+============================= */
 
 function prevSlide() {
     const car = cars[currentCarIndex];
@@ -287,123 +284,22 @@ function updateSlideButtons() {
     document.getElementById("prevBtn").style.display = car.imgs.length > 1 ? "block" : "none";
     document.getElementById("nextBtn").style.display = car.imgs.length > 1 ? "block" : "none";
 }
+function sortCars() {
+    const mode = document.getElementById("sortPrice").value;
 
-/* ============================
-        ADMIN PANEL
-============================ */
-
-function updatePriceStyle() {
-    const price = document.getElementById("detailPrice");
-    const size = document.getElementById("fontSizeInput").value;
-    const color = document.getElementById("fontColorInput").value;
-
-    price.style.fontSize = size + "px";
-    price.style.color = color;
-}
-
-/* ============================
-        THÊM ẢNH
-============================ */
-
-function addMainImage(input) {
-    const file = input.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = e => {
-        const car = cars[currentCarIndex];
-
-        car.mainImg = e.target.result;
-
-        if (!car.imgs) car.imgs = [];
-        car.imgs.unshift(e.target.result);
-
-        currentSlide = 0;
-
-        document.getElementById("detailImg").src = car.imgs[0];
-
-        saveCars();
-        renderCars();
-        updateSlideButtons();
-    };
-
-    reader.readAsDataURL(file);
-}
-
-function addExtraImages(input) {
-    const files = input.files;
-    const car = cars[currentCarIndex];
-
-    if (!car.imgs) car.imgs = [];
-
-    [...files].forEach(file => {
-        const reader = new FileReader();
-
-        reader.onload = e => {
-            car.imgs.push(e.target.result);
-            saveCars();
-        };
-
-        reader.readAsDataURL(file);
-    });
-
-    updateSlideButtons();
-}
-
-/* ============================
-        XÓA ẢNH HIỆN TẠI
-============================ */
-
-function removeCurrentImage() {
-    const car = cars[currentCarIndex];
-    if (!car.imgs || !car.imgs.length) return;
-
-    if (!confirm("Xóa ảnh hiện tại?")) return;
-
-    const removed = car.imgs.splice(currentSlide, 1)[0];
-
-    if (removed === car.mainImg) {
-        car.mainImg = car.imgs[0] || "";
-    }
-
-    currentSlide = Math.max(0, currentSlide - 1);
-
-    document.getElementById("detailImg").src =
-        car.imgs[currentSlide] || "";
-
-    saveCars();
-    renderCars();
-    updateSlideButtons();
-}
-
-/* ============================
-        MÀU RGB → HEX
-============================ */
-
-function rgbToHex(rgb) {
-    const r = rgb.match(/\d+/g);
-    return "#" + ((1 << 24) + (+r[0] << 16) + (+r[1] << 8) + +r[2])
-        .toString(16)
-        .slice(1);
-}
-
-/* ============================
-        ADMIN LOGIN
-============================ */
-
-function checkAdmin() {
-    if (!sessionStorage.getItem("isAdmin")) {
-        const pass = prompt("Nhập mật khẩu admin:");
-
-        if (pass === adminPass) {
-            sessionStorage.setItem("isAdmin", "true");
-        }
-    }
-
-    if (sessionStorage.getItem("isAdmin")) {
-        document.querySelectorAll(".admin-panel").forEach(el => {
-            el.style.display = "block";
+    if (mode === "none") {
+        loadCars();   // Trở về danh sách gốc
+    } 
+    else {
+        cars.sort((a, b) => {
+            // Lấy số từ giá (vd: "275.000.000 VND" -> 275000000)
+            const priceA = Number(a.price.replace(/\D/g, ""));
+            const priceB = Number(b.price.replace(/\D/g, ""));
+            
+            return mode === "asc" ? priceA - priceB : priceB - priceA;
         });
     }
+
+    currentPage = 1; // Về trang đầu
+    renderCars();    // Vẽ lại danh sách
 }
