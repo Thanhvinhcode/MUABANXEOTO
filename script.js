@@ -133,6 +133,12 @@ function loadCars() {
                 imgs: ["https://i.postimg.cc/dVqr9rsz/image.png"],
                 note: "Kia K3 2015 AT máy 1.6,full cửa sổ nóc,Odo 11,5 van ,xe đẹp máy zin. Trang bị đầy đủ màn hình cam lùi cam hành trình ,khởi động đề nổ startop ...Giá 325 tr bao rút hồ sơ gốc . Bán thiếu 40 tr ko lãi  . Bảo hành máy 6 tháng"
             },
+             {
+                name: "Toyota Vios 2016 ",
+                price: "295.000.000 VND",
+                mainImg: "https://i.postimg.cc/3J0sYT12/image.png",
+                imgs: ["https://i.postimg.cc/3J0sYT12/image.png"],
+                note: "Vios 2016 số tự động bản G màu trắng Ngọc Trinh, động cơ 1,5, máy số zin, ko lỗi, nội ngoại thất đẹp sẽ vào màn hình cam de, cam lùi Giá 295 bao rút hồ sơ gốc, ngân hàng hỗ trợ 50%, bán thiếu 30 tr , bảo hành máy 6 tháng" }
         ];
         saveCars();
 
