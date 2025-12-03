@@ -23,30 +23,30 @@ function loadCars() {
         {
             name:"Toyota Vios 2018",
             price:"275.000.000 VND",
-            mainImg:"https://i.postimg.cc/SRJ7rmxh/IMG-5426.jpg",
-            imgs:["https://i.postimg.cc/SRJ7rmxh/IMG-5426.jpg"],
+            mainImg:"https://i.postimg.cc/j59RG3SZ/image.png",
+            imgs:["https://i.postimg.cc/j59RG3SZ/image.png"],
             note:"Vios 2018 form mới 2019, Số sàn động cơ 1.5 , odo 7.7v "
         },
         {
             name:"Toyota Vios 2019",
             price:"265.000.000 VND",
-            mainImg:"https://i.postimg.cc/VLY53zym/z7268117325966-3703ad59d14d4a1cb7f2ddd7da6682c6.jpg",
-            imgs:["https://i.postimg.cc/VLY53zym/z7268117325966-3703ad59d14d4a1cb7f2ddd7da6682c6.jpg"],
+            mainImg:"https://i.postimg.cc/SKpcCVLD/image.png",
+            imgs:["https://i.postimg.cc/SKpcCVLD/image.png"],
             note:"Vios 2019 số sàn bản đầy đủ trang bị 7 túi khí"
         },
         {
-            name:"Huyndai i10 2016",
+            name:"Huyndai i10 2016 Số Sàn",
             price:"185.000.000 VND",
-            mainImg:"https://i.postimg.cc/hPgyWpqF/i10.jpg",
-            imgs:["https://i.postimg.cc/hPgyWpqF/i10.jpg"],
+            mainImg:"https://i.postimg.cc/FzGTn8ZB/image.png",
+            imgs:["https://i.postimg.cc/FzGTn8ZB/image.png"],
             note:"Huyndai i10 2016mt bản đủ máy 1.2"
         },
 
     {
                 name: "Xpander 2019",
                 price: "395.000.000 VND",
-                mainImg: "https://i.postimg.cc/C5JjVCjm/z7260228784873-191bf311ee6e8462269ca8df0faf9cc8.jpg",
-                imgs: ["https://i.postimg.cc/C5JjVCjm/z7260228784873-191bf311ee6e8462269ca8df0faf9cc8.jpg"],
+                mainImg: "https://i.postimg.cc/NMyK9Hyx/image.png",
+                imgs: ["https://i.postimg.cc/NMyK9Hyx/image.png"],
                 note: "Xpander 2019 số tự động, động cơ 1,5. bản Eco, tư nhân chính chủ máy zin, nội ngoại thất sạch sẽ, mình thùng thẳng tắp. Trang bị  khóa cửa thông minh, phím bấm vô lăng, khởi động nút đề, chân ga tự động, màn hình androi, cam lùi cam hành trình, đặc biệt có cam 360, bao rút hồ sơ, ngân hàng hỗ trợ 50% ,bảo hành máy 6  tháng."
 },
              {
@@ -73,8 +73,8 @@ function loadCars() {
              {
                 name: "Huyndai Accent 2020",
                 price: "375.000.000 VND",
-                mainImg: "https://i.postimg.cc/yxg2WTTn/vinh1.jpg",
-                imgs: ["https://i.postimg.cc/yxg2WTTn/vinh1.jpg"],
+                mainImg: "https://i.postimg.cc/3JtvdYW5/image.png",
+                imgs: ["https://i.postimg.cc/3JtvdYW5/image.png"],
                 note: "Xe đi 6v7 , số tự động , Nội , Ngoại thất mới , màn hình Android ,..."
             },
              {
@@ -92,7 +92,7 @@ function loadCars() {
                 note: "Xe chính chủ, đi ít."
             },
              {
-                name: "Toyota Innova 2019",
+                name: "Toyota Innova 2019 Bản E",
                 price: "385.000.000 VND",
                 mainImg: "https://i.postimg.cc/6pCsKzHf/b.jpg",
                 imgs: ["https://i.postimg.cc/6pCsKzHf/b.jpg"],
@@ -115,8 +115,8 @@ function loadCars() {
              {
                 name: "Toyota Vios 2016 Tự Động",
                 price: "295.000.000 VND",
-                mainImg: "https://i.postimg.cc/3J0sYT12/image.png",
-                imgs: ["https://i.postimg.cc/3J0sYT12/image.png"],
+                mainImg: "https://i.postimg.cc/LsNh5Vx2/image.png",
+                imgs: ["https://i.postimg.cc/LsNh5Vx2/image.png"],
                 note: "Vios 2016 số tự động bản G màu trắng Ngọc Trinh, động cơ 1,5, máy số zin, ko lỗi, nội ngoại thất đẹp sẽ vào màn hình cam de, cam lùi Giá 295 bao rút hồ sơ gốc, ngân hàng hỗ trợ 50%, bán thiếu 30 tr , bảo hành máy 6 tháng" },
           {
                 name: "Suzuki Ciaz 2019",
@@ -128,36 +128,44 @@ function loadCars() {
               {
                 name: "Toyota Innova 2.0 ",
                 price: "385.000.000 VND",
-                mainImg: "https://i.postimg.cc/85fKhYDr/image.png",
-                imgs: ["https://i.postimg.cc/85fKhYDr/image.png"],
+                mainImg: "https://i.postimg.cc/7Lh8w1d8/image.png",
+                imgs: ["https://i.postimg.cc/7Lh8w1d8/image.png"],
                 note: "Đang đợi cập nhập mô tả"
             },
               {
                 name: "Ford",
                 price: "285.000.000 VND",
-                mainImg: "https://i.postimg.cc/qBXc9rmJ/image.png",
-                imgs: ["https://i.postimg.cc/qBXc9rmJ/image.png"],
+                mainImg: "https://i.postimg.cc/pTgt09ss/image.png",
+                imgs: ["https://i.postimg.cc/pTgt09ss/image.png"],
                 note: "Đang đợi cập nhập mô tả"
+            },
+            
+              {
+                name: "Aveo ",
+                price: "175.000.000 VND",
+                mainImg: "https://i.postimg.cc/jSjk7xXJ/image.png",
+                imgs: ["https://i.postimg.cc/jSjk7xXJ/image.png"],
+                note: "Số tự động ,..."
             },
               {
                 name: "Xe Cổ",
                 price: "40.000.000 VND",
-                mainImg: "https://i.postimg.cc/TY5dKdBJ/image.png",
-                imgs: ["https://i.postimg.cc/TY5dKdBJ/image.png"],
+                mainImg: "https://i.postimg.cc/MptzmpVj/image.png",
+                imgs: ["https://i.postimg.cc/MptzmpVj/image.png"],
                 note: "Đang đợi cập nhập mô tả"
             },
               {
                 name: "Xe cổ ",
                 price: "30.000.000 VND",
-                mainImg: "https://i.postimg.cc/jdRVbstM/image.png",
-                imgs: ["https://i.postimg.cc/jdRVbstM/image.png"],
+                mainImg: "https://i.postimg.cc/8cqSsF8T/image.png",
+                imgs: ["https://i.postimg.cc/8cqSsF8T/image.png"],
                 note: "Đang đợi cập nhập mô tả"
             },
               {
                 name: "Toyota nâu",
                 price: "315.000.000 VND",
-                mainImg: "https://i.postimg.cc/1RJB8PDc/image.png",
-                imgs: ["https://i.postimg.cc/1RJB8PDc/image.png"],
+                mainImg: "https://i.postimg.cc/52WZQdrL/image.png",
+                imgs: ["https://i.postimg.cc/52WZQdrL/image.png"],
                 note: "Đang đợi cập nhập mô tả"
             },
               {
