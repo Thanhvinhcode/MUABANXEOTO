@@ -24,14 +24,14 @@ function loadCars() {
             name:"Toyota Vios 2018",
             price:"275.000.000 VND",
             mainImg:"https://i.postimg.cc/j59RG3SZ/image.png",
-            imgs:["https://i.postimg.cc/j59RG3SZ/image.png"],
+            imgs:["https://i.postimg.cc/QxrszPXw/image.png"],
             note:"Vios 2018 form mới 2019, Số sàn động cơ 1.5 , odo 7.7v "
         },
         {
             name:"Toyota Vios 2019",
             price:"265.000.000 VND",
             mainImg:"https://i.postimg.cc/SKpcCVLD/image.png",
-            imgs:["https://i.postimg.cc/SKpcCVLD/image.png"],
+            imgs:["https://i.postimg.cc/JnWP8bGC/image.png"],
             note:"Vios 2019 số sàn bản đầy đủ trang bị 7 túi khí"
         },
         {
@@ -74,7 +74,7 @@ function loadCars() {
                 name: "Huyndai Accent 2020",
                 price: "375.000.000 VND",
                 mainImg: "https://i.postimg.cc/3JtvdYW5/image.png",
-                imgs: ["https://i.postimg.cc/3JtvdYW5/image.png"],
+                imgs: ["https://i.postimg.cc/Pfy8fmCk/image.png"],
                 note: "Xe đi 6v7 , số tự động , Nội , Ngoại thất mới , màn hình Android ,..."
             },
              {
@@ -116,7 +116,7 @@ function loadCars() {
                 name: "Toyota Vios 2016 Tự Động",
                 price: "295.000.000 VND",
                 mainImg: "https://i.postimg.cc/LsNh5Vx2/image.png",
-                imgs: ["https://i.postimg.cc/LsNh5Vx2/image.png"],
+                imgs: ["https://i.postimg.cc/J0kgx1DH/image.png"],
                 note: "Vios 2016 số tự động bản G màu trắng Ngọc Trinh, động cơ 1,5, máy số zin, ko lỗi, nội ngoại thất đẹp sẽ vào màn hình cam de, cam lùi Giá 295 bao rút hồ sơ gốc, ngân hàng hỗ trợ 50%, bán thiếu 30 tr , bảo hành máy 6 tháng" },
           {
                 name: "Suzuki Ciaz 2019",
