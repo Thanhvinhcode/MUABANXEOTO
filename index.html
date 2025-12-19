@@ -3,67 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thành Vinh – Mua Bán Xe ÔTÔ Miền Nam</title>
+<title>Sàn mua bán ô tô</title>
 
-<!-- TÁCH CSS RA FILE RIÊNG -->
+<!-- FONT XỊN -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body onload="initPage()">
 
-<header>Thành Vinh – Mua Bán Xe ÔTÔ Miền Nam - 039.767.0298</header>
-<h2 style="text-align: center;">Xem thông tin xe chi tiết - Liên hệ qua zalo nhé !!!! Cửa hàng Ở Thuận An - Bình Dương</h2>
-<div class="filter-box">
-    <label>Sắp xếp giá:</label>
-    <select id="sortPrice" onchange="sortCars()">
-        <option value="none">Không sắp xếp</option>
-        <option value="asc">Giá thấp → cao</option>
-        <option value="desc">Giá cao → thấp</option>
-    </select>
-</div>
+<header class="header">
+  <div class="header-inner">
+    <h1>🚗 THÀNH VINH MUA BÁN Ô TÔ</h1>
+    <span>📞 039 767 0298 </span>
+  </div>
+</header>
+<!-- SHOP -->
+<div class="shop-bar" id="shopBar"></div>
 
-<!-- DANH SÁCH XE -->
-<div id="carList" class="car-list"></div>
+<div class="container">
+  <!-- FILTER -->
+  <aside class="filter">
+    <h3>Lọc xe</h3>
 
-<!-- PHÂN TRANG -->
-<div id="pagination" class="pagination"></div>
+    <input id="searchInput" placeholder="Tìm tên xe..." oninput="applyFilter()">
 
-<!-- POPUP -->
-<div id="carDetail" class="modal" onclick="clickOutsidePopup(event)">
-    <div class="modal-content">
-        <span class="close" onclick="closeDetail()">&times;</span>
-        <h2 id="detailName"></h2>
-
-        <div style="position:relative;">
-            <img id="detailImg" src="">
-            <button id="prevBtn" class="slide-btn">&#10094;</button>
-            <button id="nextBtn" class="slide-btn">&#10095;</button>
-        </div>
-
-        <p id="detailPrice" class="price"></p>
-<p id="detailDesc"></p>
-
-        <div id="detailNote" class="note-box">Không có ghi chú.</div>
-
-        <!-- ĐÃ XOÁ TOÀN BỘ ADMIN PANEL -->
+    <div class="price-range">
+      <button onclick="setRange(100,300)">100–300tr</button>
+      <button onclick="setRange(100,400)">100–400tr</button>
+      <button onclick="setRange(300,500)">300–500tr</button>
+      <button onclick="setRange(0,9999)">Tất cả</button>
     </div>
+
+    <select id="sortPrice" onchange="sortCars()">
+      <option value="none">Sắp xếp giá</option>
+      <option value="asc">Giá thấp → cao</option>
+      <option value="desc">Giá cao → thấp</option>
+    </select>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div id="shopInfo" class="shop-info"></div>
+    <div id="carList" class="car-list"></div>
+  </main>
 </div>
 
-<div class="contact-box">
-    <h2>Liên Hệ Trực Tiếp</h2>
-    <a href="https://zalo.me/0397670298" target="_blank">📱 Zalo: 039.767.0298</a>
-    <a href="tel:0397670298">📞 Gọi ngay</a>
-    <a href="https://www.tiktok.com/@thanhvinhmuabanxe" target="_blank">🎵 TikTok</a>
+<!-- MODAL -->
+<div class="modal" id="carDetail" onclick="clickOutside(event)">
+  <div class="modal-box">
+    <span class="close" onclick="closeDetail()">×</span>
+
+    <h2 id="detailName"></h2>
+    <img id="detailImg">
+    <p id="detailPrice" class="price"></p>
+    <p id="detailNote"></p>
+
+    <div class="actions">
+      <a class="call">📞 Gọi ngay</a>
+      <a class="zalo">💬 Chat Zalo</a>
+    </div>
+
+    <p class="hint">Chat Zalo để được tư vấn xe trong khoảng 100–400 triệu</p>
+  </div>
 </div>
 
-<div class="floating-btn">
-    <a href="tel:0397670298">📞 Gọi</a>
-    <a href="https://zalo.me/0397670298" target="_blank">💬 Zalo</a>
-    <a href="https://www.tiktok.com/@thanhvinhmuabanxe" target="_blank">🎵 TikTok</a>
-</div>
-
-<!-- TÁCH JS RA FILE RIÊNG -->
 <script src="script.js"></script>
+<!-- CHAT FLOAT -->
+<div class="chat-float">
+  <a 
+    href="https://zalo.me/0397670298" 
+    target="_blank" 
+    class="chat-item zalo"
+    title="Chat Zalo"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg">
+  </a>
+
+  <a 
+    href="https://www.tiktok.com/@thanhvinhmuabanxe" 
+    target="_blank" 
+    class="chat-item tiktok"
+    title="TikTok"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/TikTok_logo.svg">
+  </a>
+</div>
 
 </body>
 </html>
