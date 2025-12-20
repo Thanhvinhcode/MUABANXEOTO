@@ -27,10 +27,12 @@ function car(name, price, shop, note, imgs){
 
 function initPage(){
   allCars = [
+    car( "Mitsubishi 2004 SS",79,"daiThang","Xe bản đặc biệt 8 chỗ ngoài , nội thất khá mới , hộp số chuyển động nhẹ nhàng ",["https://i.postimg.cc/4yd6rVGh/jolie.png","https://i.postimg.cc/ZnVZFs4f/image.png","https://i.postimg.cc/QdjYrNQR/image.png","https://i.ibb.co/wth1DP6/image.png","https://i.ibb.co/TMgbc4JT/image.png","https://i.ibb.co/Kz9BKRBw/image.png"]),
+
     car("Toyota Vios 2018 SS",265,"daiThang","Vios 2018 from mới 2019, số sàn động cơ 1.5, odo 7.7v. Nội ngoại thất đẹp",["https://i.postimg.cc/g2wMw9fV/Vios-2018.png","https://i.ibb.co/Q7c2K6k3/image.png","https://i.ibb.co/tPmdLdr8/image.png","https://i.ibb.co/N2MyqKd8/image.png","https://i.ibb.co/PvhP46dx/image.png"]),
+
     car("Hyundai Elantra 2016 SS",295,"daiThang","Xe gia đình,không qua dịch vụ","https://i.postimg.cc/fTfq4jYf/elantra2016.png"),
 
-    car( "Mitsubishi 2004 SS",79,"daiThang","Xe bản đặc biệt 8 chỗ ngoài , nội thất khá mới , hộp số chuyển động nhẹ nhàng ",["https://i.postimg.cc/4yd6rVGh/jolie.png","https://i.postimg.cc/ZnVZFs4f/image.png","https://i.postimg.cc/QdjYrNQR/image.png","https://i.ibb.co/wth1DP6/image.png","https://i.ibb.co/TMgbc4JT/image.png","https://i.ibb.co/Kz9BKRBw/image.png"]),
 
     car("Toyota Innova 2019 SS ",325,"daiThang","Innova 2019 số sàn bản E. động cơ 2.0.màu trắng, máy còn mới, được trang bị camera, màn hình đầy đủ, ghế da còn mới, nét căng","https://i.postimg.cc/VkBRTj09/innova2019.png"),
     car("Toyota Vios 2016 STĐ ",290,"daiThang","Xe gia đình,không qua dịch vụ","https://i.postimg.cc/SKPD7mz3/vios-2016.png"),
@@ -38,7 +40,13 @@ function initPage(){
     car("Hyundai i10 2016 SS Bản Đủ",185,"daiThang","có khóa cửa thông mình , gương chỉnh điện , có màn hình android, cao lùi , cam hành trình","https://i.postimg.cc/jqDrbjX7/i10-2016.png"),
     car("Hyundai i10 2018 STĐ Bản đủ ",275,"daiThang","có khóa cửa thông mình , gương chỉnh điện , có màn hình android, cao lùi , cam hành trình","https://i.postimg.cc/JzcfqH1S/i10-2018.png"),
     car("Hyundai Accent 2020 STĐ",375,"daiThang","Xe có cửa sổ trời , đầy đủ đồ chơi và chức năng cho xe","https://i.postimg.cc/6QHnCcFR/accent-2020.png"),
-    car("Suzuki Ciaz 2019 STĐ ",275,"daiThang","gương chỉnh điện , có màn hình android, cao lùi , cam hành trình","https://i.postimg.cc/BQg686rJ/ciaz-2019.png"),
+    car("Suzuki Ciaz 2019 STĐ ",295,"daiThang","gương chỉnh điện , có màn hình android, cao lùi , cam hành trình","https://i.postimg.cc/BQg686rJ/ciaz-2019.png"),
+
+
+
+
+
+
 
 
 
