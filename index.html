@@ -3,96 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sàn mua bán ô tô</title>
-
-<!-- FONT XỊN -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<title>Quản Lý Nợ</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body onload="initPage()">
-
-<header class="header">
-  <div class="header-inner">
-    <h1>🚗 THÀNH VINH MUA BÁN Ô TÔ</h1>
-    <span>📞 039 767 0298 </span>
-  </div>
-</header>
-<!-- SHOP -->
-<div class="shop-bar" id="shopBar"></div>
+<body class="light">
 
 <div class="container">
-  <!-- FILTER -->
-  <aside class="filter">
-    <h3>Lọc xe</h3>
+<h2>💸 Quản Lý Nợ (Gọn)</h2>
 
-    <input id="searchInput" placeholder="Tìm tên xe..." oninput="applyFilter()">
+<button class="theme" onclick="changeTheme()">🎨 Đổi màu</button>
 
-    <div class="price-range">
-      <button onclick="setRange(20,200)">20–200tr</button>
-      <button onclick="setRange(200,500)">200–500tr</button>
-      <button onclick="setRange(500,950)">500–950tr</button>
-      <button onclick="setRange(0,9999)">Tất cả</button>
-    </div>
-
-    <select id="sortPrice" onchange="sortCars()">
-      <option value="none">Sắp xếp giá</option>
-      <option value="asc">Giá thấp → cao</option>
-      <option value="desc">Giá cao → thấp</option>
-    </select>
-  </aside>
-
-  <!-- CONTENT -->
-  <main class="content">
-    <div id="shopInfo" class="shop-info"></div>
-    <div id="carList" class="car-list"></div>
-  </main>
+<div class="section">
+<h3>📉 Bạn nợ</h3>
+<div class="form">
+<input id="n1" placeholder="Tên">
+<input id="m1" placeholder="Tiền" oninput="formatInput(this)">
+<button class="add" onclick="add('debt')">Thêm</button>
+</div>
+<table>
+<thead><tr><th>Tên</th><th>Số tiền</th><th></th></tr></thead>
+<tbody id="list1"></tbody>
+</table>
+<div class="total" id="total1"></div>
 </div>
 
-<!-- MODAL -->
-<div class="modal" id="carDetail" onclick="clickOutside(event)">
-  <div class="modal-box">
-    <span class="close" onclick="closeDetail()">×</span>
+<div class="section">
+<h3>📈 Người khác nợ</h3>
+<div class="form">
+<input id="n2" placeholder="Tên">
+<input id="m2" placeholder="Tiền" oninput="formatInput(this)">
+<button class="add" onclick="add('loan')">Thêm</button>
+</div>
+<table>
+<thead><tr><th>Tên</th><th>Số tiền</th><th></th></tr></thead>
+<tbody id="list2"></tbody>
+</table>
+<div class="total" id="total2"></div>
+</div>
 
-    <h2 id="detailName"></h2>
-<img id="detailImg" class="detail-main-img">
-
-<div id="detailThumbs" class="detail-thumbs"></div>
-    <p id="detailPrice" class="price"></p>
-    <p id="detailNote"></p>
-
-    <div class="actions">
-      <a class="call">📞 Gọi ngay</a>
-      <a class="zalo">💬 Chat Zalo</a>
-    </div>
-
-    <p class="hint">Chat Zalo để được tư vấn xe trong khoảng 100–400 triệu</p>
-  </div>
 </div>
 
 <script src="script.js"></script>
-<!-- CHAT FLOAT -->
-<div class="chat-float">
-  <a 
-    href="https://zalo.me/0397670298" 
-    target="_blank" 
-    class="chat-item zalo"
-    title="Chat Zalo"
-  >
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg">
-  </a>
-
-  <a 
-    href="https://www.tiktok.com/@thanhvinhmuabanxe" 
-    target="_blank" 
-    class="chat-item tiktok"
-    title="TikTok"
-  >
-    <img src="https://bom.so/T0VKzP">
-  </a>
-</div>
-
 </body>
 </html>
