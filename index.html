@@ -161,9 +161,45 @@
   body.mobile-mode .theme-btn { width: 34px; height: 34px; font-size: 16px; }
   body.mobile-mode .view-btn { width: 34px; height: 34px; font-size: 16px; }
   body.mobile-mode .board-header { padding: 16px 16px 14px; }
+
+  /* ── Lock screen ── */
+  #lock-screen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 24px; transition: opacity 0.3s; }
+  #lock-screen.hidden { display: none; }
+  .lock-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 20px; padding: 36px 32px 32px; width: 100%; max-width: 360px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .lock-icon { width: 64px; height: 64px; background: var(--surface2); border-radius: 18px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; border: 0.5px solid var(--border); }
+  .lock-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.4px; }
+  .lock-sub { font-size: 13px; color: var(--text3); margin-bottom: 28px; }
+  .lock-input-wrap { position: relative; margin-bottom: 14px; }
+  .lock-input { width: 100%; height: 48px; border: 1px solid var(--border2); border-radius: 12px; padding: 0 44px 0 16px; font-size: 16px; background: var(--surface2); color: var(--text); outline: none; transition: border-color 0.15s; letter-spacing: 2px; }
+  .lock-input:focus { border-color: var(--text2); }
+  .lock-input.error { border-color: #c0392b; animation: shake 0.35s ease; }
+  .lock-eye { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 18px; color: var(--text3); padding: 0; line-height: 1; }
+  .lock-btn { width: 100%; height: 48px; border-radius: 12px; border: none; background: var(--text); color: var(--bg); font-size: 15px; font-weight: 600; cursor: pointer; transition: opacity 0.15s, transform 0.1s; margin-top: 4px; }
+  .lock-btn:hover { opacity: 0.85; }
+  .lock-btn:active { transform: scale(0.98); }
+  .lock-err { font-size: 13px; color: #c0392b; margin-bottom: 8px; min-height: 18px; }
+  .lock-remember { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 16px; font-size: 13px; color: var(--text3); cursor: pointer; user-select: none; }
+  .lock-remember input { cursor: pointer; accent-color: var(--text); width: 15px; height: 15px; }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px)} 40%{transform:translateX(8px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
 </style>
 </head>
 <body>
+<div id="lock-screen">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Sổ Nợ Cá Nhân</div>
+    <div class="lock-sub">Nhập mật khẩu để tiếp tục</div>
+    <div class="lock-input-wrap">
+      <input class="lock-input" id="lock-pass" type="password" placeholder="Mật khẩu..." onkeydown="if(event.key==='Enter')checkPass()" autocomplete="off" />
+      <button class="lock-eye" id="lock-eye-btn" onclick="toggleEye()">👁️</button>
+    </div>
+    <div class="lock-err" id="lock-err"></div>
+    <button class="lock-btn" onclick="checkPass()">Đăng nhập</button>
+    <label class="lock-remember">
+      <input type="checkbox" id="lock-remember" /> Nhớ đăng nhập trên thiết bị này
+    </label>
+  </div>
+</div>
 <div class="app" id="app">
   <div class="header">
     <div class="logo">
@@ -389,6 +425,42 @@ try {
 } catch(e){}
 
 render();
+
+/* ── Lock ── */
+var PASS = '0397670298';
+function checkPass() {
+  var inp = document.getElementById('lock-pass');
+  var err = document.getElementById('lock-err');
+  if (inp.value === PASS) {
+    err.textContent = '';
+    if (document.getElementById('lock-remember').checked) {
+      try { localStorage.setItem('sono_auth', '1'); } catch(e){}
+    }
+    document.getElementById('lock-screen').classList.add('hidden');
+    inp.value = '';
+  } else {
+    err.textContent = 'Mật khẩu không đúng, thử lại!';
+    inp.classList.add('error');
+    inp.value = '';
+    setTimeout(function(){ inp.classList.remove('error'); inp.focus(); }, 400);
+  }
+}
+function toggleEye() {
+  var inp = document.getElementById('lock-pass');
+  var btn = document.getElementById('lock-eye-btn');
+  if (inp.type === 'password') { inp.type = 'text'; btn.textContent = '🙈'; }
+  else { inp.type = 'password'; btn.textContent = '👁️'; }
+}
+try {
+  if (localStorage.getItem('sono_auth') === '1') {
+    document.getElementById('lock-screen').classList.add('hidden');
+  } else {
+    setTimeout(function(){ document.getElementById('lock-pass').focus(); }, 100);
+  }
+} catch(e){
+  setTimeout(function(){ document.getElementById('lock-pass').focus(); }, 100);
+}
+
 </script>
 </body>
 </html>
